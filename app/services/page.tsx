@@ -8,33 +8,32 @@ const services = [
   {
     num: '01',
     title: 'Web Development',
-    description: 'Custom websites and web applications built with modern technologies.',
-    href: ''
+    description: 'High-performance web applications built with Next.js, React, and .NET for robust backend solutions.',
+    href: '/contact?service=web-development'
   },
   {
     num: '02',
     title: 'UI/UX Design',
-    description: 'Beautiful and intuitive user interfaces designed for optimal user experience.',
-    href: ''
+    description: 'Intuitive and accessible user interfaces that ensure a seamless and engaging user experience.',
+    href: '/contact?service=ux-ui'
   },
   {
     num: '03',
     title: 'Logo Design',
-    description: 'Custom logos that represent your brand identity.',
-    href: ''
+    description: 'Distinctive and memorable branding design to help your business stand out in the market.',
+    href: '/contact?service=logo-design'
   },
   {
     num: '04',
     title: 'SEO Optimization',
-    description: 'Improve your website visibility and ranking on search engines.',
-    href: ''
+    description: 'Technical SEO strategies to improve visibility and drive organic traffic to your digital products.',
+    href: '/contact?service=SEO'
   },
 ]
 
-
 export default function Services() {
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py:0">
+    <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
@@ -48,18 +47,21 @@ export default function Services() {
             return (
               <div key={index} className="flex-1 flex flex-col justify-center gap-6 group">
                 <div className="w-full flex justify-between items-center">
-                  <div
-                    className="text-5xl font-extrabold text-outline text-transparent group-hover:text-accent-hover transition-all duration-300"
-                  >
+                  <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-accent-hover transition-all duration-300">
                     {service.num}
                   </div>
-                  <Link href={service.href} className="w-[70px] h-[70px] rounded-full
-                  bg-white group-hover:bg-accent transition-all duration-500 flex
-                  justify-center items-center hover:-rotate-45">
+                  <Link 
+                    href={service.href} 
+                    className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
+                  >
                     <BsArrowDownRight className="text-primary text-3xl" />
                   </Link>
                 </div>
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">{service.title}</h2>
+                <Link href={service.href}>
+                  <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 cursor-pointer">
+                    {service.title}
+                  </h2>
+                </Link>
                 <p className="text-white/60">{service.description}</p>
                 <div className="border-b border-white/20 w-full"></div>
               </div>

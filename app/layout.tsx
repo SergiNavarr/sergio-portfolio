@@ -14,8 +14,8 @@ const jetBrainsMono = JetBrains_Mono({
 
 
 export const metadata: Metadata = {
-  title: "Sergio Navarro",
-  description: "Dev Portfolio",
+  title: "Sergio Navarro | Full Stack Developer",
+  description: "Portfolio of Sergio Navarro, a software developer specializing in .NET and React.",
 };
 
 export default function RootLayout({

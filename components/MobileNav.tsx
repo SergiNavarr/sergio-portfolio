@@ -23,7 +23,7 @@ export default function MobileNav() {
             </SheetTrigger>
 
             <SheetContent className="flex flex-col">
-                <SheetTitle className="hidden">Mobile Navigation</SheetTitle>
+                <SheetTitle className="sr-only">Mobile Navigation</SheetTitle>
 
                 <div className="mt-32 mb-40 text-center text-2xl">
                     <Link href="/">

@@ -1,11 +1,11 @@
 import Link from "next/link"
-import { FaGithub, FaLinkedin, FaYoutube, FaTwitter} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaMailBulk} from "react-icons/fa";
 
 const socials = [
     {icon: <FaGithub />, path: "https://github.com/serginavarr"},
-    {icon: <FaLinkedin />, path: "https://linkedin.com/in/serginavarr"},
-    {icon: <FaYoutube />, path: "https://youtube.com/serginavarr"},
-    {icon: <FaTwitter />, path: "https://twitter.com/serginavarr"},
+    {icon: <FaLinkedin />, path: "https://www.linkedin.com/in/sergio-ignacio-navarro/"},
+    {icon: <FaInstagram />, path: "https://www.instagram.com/sergioignaciok"},
+    {icon: <FaMailBulk />, path: "mailto:nachonavarro197@gmail.com"},
 ]
 
 interface SocialProps {
