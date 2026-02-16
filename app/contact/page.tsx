@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { useSearchParams } from "next/navigation"; 
+import { useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -29,7 +29,7 @@ const info = [
   },
 ]
 
-export default function Contact() {
+function ContactForm() { 
   const searchParams = useSearchParams();
   const serviceDefault = searchParams.get("service");
 
@@ -75,7 +75,7 @@ export default function Contact() {
                 
                 <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-sm" />
               </div>
-
+              
               <Select onValueChange={setService} name="service" value={service}> 
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service"></SelectValue>
@@ -125,5 +125,13 @@ export default function Contact() {
         </div>
       </div>
     </motion.section>
+  );
+}
+
+export default function Contact() {
+  return (
+    <Suspense fallback={<div className="flex justify-center items-center min-h-[80vh] text-accent">Loading...</div>}>
+      <ContactForm />
+    </Suspense>
   );
 }
